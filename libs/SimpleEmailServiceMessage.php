@@ -161,7 +161,7 @@ final class SimpleEmailServiceMessage {
 	 * @author Daniel Zahariev
 	 */
 	function addAttachmentFromFile($name, $path, $mimeType = 'application/octet-stream', $contentId = null) {
-		if (file_exists($path) && is_file($path) && is_readable($path)) {
+		if ($path) {
 			$this->attachments[$name] = array(
 				'name' => $name,
 				'mimeType' => $mimeType,

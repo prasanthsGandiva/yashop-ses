@@ -48,3 +48,16 @@ Yii::$app->mail->compose('contact/html', ['contactForm' => $form])
     ->setTo($form->email)
     ->setSubject($form->subject)
     ->send();
+```
+
+To send an email with attachment file url, you may use the following code:
+
+```php
+$file = "www.example.com/file/demo.csv";
+Yii::$app->mail->compose('contact/html', ['contactForm' => $form])
+    ->setFrom('from@domain.com')
+    ->setTo($form->email)
+    ->setSubject($form->subject)
+    ->attach($file)
+    ->send();
+```
