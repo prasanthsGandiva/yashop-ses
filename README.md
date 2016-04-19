@@ -1,4 +1,4 @@
-Amazon ses extension for Yii2
+Amazon ses extension for Yii2 with Attachment File URL
 =============================
 Extension for sending emails via amazon ses. Part of YaShop
 
