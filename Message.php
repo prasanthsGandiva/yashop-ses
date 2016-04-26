@@ -122,8 +122,18 @@ class Message extends BaseMessage
      */
     public function setFrom($from, $name = null)
     {
-        if (!isset($name)) {
-            $name = gethostname();
+        // check if name exists
+        // if not, get the username in the email address
+        if ($name === null) {
+            // check if $from is an array
+            if (is_array($from)) {
+                $email = array_keys($from);
+            } else {
+                $email = $from;
+            }
+            // getting the username of the email address
+            $names = explode('@', $email);
+            $name = $names[0];
         }
         if (!is_array($from) && isset($name)) {
             $from = array($from => $name);
