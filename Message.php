@@ -127,7 +127,7 @@ class Message extends BaseMessage
         if ($name === null) {
             // check if $from is an array
             if (is_array($from)) {
-                $email = array_keys($from);
+                $email = $from[0];
             } else {
                 $email = $from;
             }
